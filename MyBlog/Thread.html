@@ -1,0 +1,51 @@
+<h1>쓰레드와 프로세스</h1>
+
+
+<p>
+    <ol>     
+        <h2> <li > 쓰레드   </li>  </h2>
+        
+        <ul>
+            <li>하나의 프로세스는 하나 이상의 쓰레드를 가지게 되고, 실제 작업을 단위는 쓰레드</li>
+        </ul>
+        
+
+        
+        <h2><li>  프로세스   </li></h2>
+        
+        <ul>
+            <li>실행 중인 프로그램</li>
+            <li>프로그램이 실행되면 OS로부터 메모리를 할당받아 프로세스 상태가 됨</li>
+        </ul>
+
+        <h2><li>멀티쓰레드</li></h2>
+        <ul>
+            <li> 여러 쓰레드가 동시에 수행되는 프로그래밍, 여러 작업이 동시에 실행되는 효과</li>
+            <li> 쓰레드는 각각 자신만의 작업 공간을 가짐 (context) </li>
+            <li> 각 쓰레드 사이에서 공유하는 자원이 있을 수 있음 (자바에서는 static instance)</li>
+            <li> 여러 thread가 자원을 공유하여 작업이 수행되는 경우 서로 자원을 차지하려는 <strong>race condition이 발생할 수 있음</strong></li>
+            <li> 이렇게 여러 thread가 공유하는 자원중 경쟁이 발생하는 부분을 <strong>critical section</strong> 이라고 함</li>
+            <li> critical section에 대한 동기화(일종의 순차적 수행)를 구현하지 않으면 오류가 발생할 수 있음</li>
+
+
+        </ul>
+
+        <h2><li> critiacal section과 semaphore</li></h2>
+        <ul>
+            <li> critical section은 두 개 이상의 thread가 동시에 접근 하는 경우 문제가 생길 수 있기 때문에, 동시에 접근할 수 없는 영역</li>
+            <li> semaphore는 특별한 형태의 시스템 객체이며 get/release 두 개의 기능이 있음</li>
+            <li> 한 순간 오직 하나의 쓰레드만이 semaphore를 얻을 수 있고, 나머지 쓰레드들은 대기(blocking) 상태가 됨</li>
+            <li> semaphore를 얻은 쓰레드만이 critical section에 들어갈 수 있음</li>
+        </ul>
+
+        <h2><li>동기화 (synchronization)</li></h2>
+        <ul>
+            <li> 두 개의 thread가 같은 객체에 접근 할 경우, 동시에 접근 함으로써 오류가 발생할 수 있음</li>
+            <li> 동기화는 임계영역에 접근한 경우 공유자원을 lock하여 다른 thread의 접근을 제어하는 것을 의미</li>
+            <li> 동기화를 잘못 구현하면, deadlock에 빠질 수 있음</li>
+        </ul>      
+    </ol>
+</p>
+
+
+
